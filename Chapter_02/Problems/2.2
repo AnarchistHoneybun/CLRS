@@ -1,0 +1,24 @@
+a. we need to show that the elements of A' are the same as the elements of A.
+
+b. Loop invariant: the subarray A[j..A.length] consists of 
+    elements of A such that A[j] is the smallest element in A[j..A.length].
+
+    before execution: j = A.length, so A[j..A.length] is A[A.length..A.length] which is a single element, so it's trivially the smallest value in that subarray.
+
+    maintenance: since j shrinks from A.length, therefore at every iteration the size of the sorted region grows. since these are the largest n elements of that array given n iterations of the loop, we know that everything after that point is smaller than these. therefore A[j] is still the smallest element in A[j..A.length].
+
+    termination: when the loop ends, j = A.length - 1 (since it is equal to i). since the array is sorted, A[j] is the smallest element in A[j..A.length] and the loop invariant holds.
+
+c. Loop invariant: At the start of each iteration of the for loop,
+    the subarray A[1…i−1]A[1…i−1] consists of the elements that are smaller than the elements in the subarray A[i…n]A[i…n] in sorted order.
+
+    before execution: Initially the subarray A[1…i−1]A[1…i−1] is empty and trivially this is the smallest element of the subarray.
+
+    maintenance: after the execution of the inner loop, A[i]A[i] will be the smallest element of the subarray A[i…n]A[i…n]. And in the beginning of the outer loop, A[1…i−1]A[1…i−1] consists of elements that are smaller than the elements of A[i…n]A[i…n], in sorted order. So, after the execution of the outer loop, subarray A[1…i]A[1…i] will consists of elements that are smaller than the elements of A[i+1…n]A[i+1…n], in sorted order.
+
+    termination: The loop terminates when i=A.lengthi=A.length. At that point the array A[1…n]A[1…n] will consists of all elements in sorted order.
+
+d. Bubble sort run time: θ(n^2)
+    Insertion sort run time: θ(n^2)
+
+    the run time of bubble sort is the same as insertion sort, but bubble sort executes more swaps for a given average dataset, thus the constant factors can make it more inefficient that insertion sort.

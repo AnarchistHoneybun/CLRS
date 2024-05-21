@@ -1,0 +1,9 @@
+a. (1,5), (2,5), (3,4), (3,5), (4,5)
+
+b. If the array of n numbers is reverse sorted (ie, the elements of the array are {n, n-1, n-2 ... 2, 1}) then it contains the most amount of inversions. 
+
+c. runtime of insertion sort is directly proportional to the 
+    number of inversions in the array. This follows from our answer in part b where we can see that if the array is reverse sorted, then the number of inversions is maximized. We also know that the runtime of insertion sort is the worst when arrays are reverse sorted. Therefore, the runtime of insertion sort is directly proportional to the number of inversions in the array.
+
+d. divide array in half recursively, count inversion in smallest part
+    (trivial for one element subarray), merge and recalculate, add and return inversion count
