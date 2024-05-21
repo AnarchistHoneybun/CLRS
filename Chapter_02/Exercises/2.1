@@ -1,0 +1,40 @@
+1. visual question, refer to page 18
+
+2. for j = 2 to A.length
+        key = A[j]
+        // insert A[j] into reverse sorted sequence A[1..j-1]
+        i = j-1
+        while i > 0 and A[i] < key
+            A[i+1] = A[i]
+            i = i - 1
+        A[i+1] = key
+
+3. linear search:
+
+    for j = 1 to A.length
+        if A[j] == s_val
+            return j
+        return NIL
+    
+    loop invariant: at the start of each iteration of the loop, the value we are searching for (s_val) is either present in A[j..length] or is absent from the array
+
+    -> before execution: j = 1, A[1..length] has not been searched, so the invariant is trivially true, the value is either present in entire array or is not
+    -> maintenance: if we encounter the value at some j=x, the loop will terminate and return x, so A[x+1..length] may or may not contain the value. if we do not encounter it at any point up until now, the value still may or may not be present in A[j..length]
+    -> termination: the loop terminates when j = A.length + 1 (index out of bounds), provided we don't find the value earlier. since the part of the array that remains to be searched is A[length+1..] which is out of bounds and thus empty, the invariant is again trivially true
+
+4. bit addition:
+
+    Input: Two sequences of n bits A = <a1, a2...an> and B = <b1, b2...bn>
+    Output: A sequence of n+1 bits C = <c1, c2...cn+1> such that C = A + B (when we treat A and B as binary numbers and add them together, C is the result of the addition)
+
+
+    Add_Bits(A[n], B[n], C[n+1])
+        for i = n downto 1
+            if A[i] and B[i]
+                C[i] = 0
+                C[i-1] = 1
+            else if A[i] or B[i]
+                C[i] = 1
+            else
+                C[i] = 0
+        return C

@@ -1,0 +1,15 @@
+a. θ(n)
+
+b. N_Horner(A,x)
+    y = 0
+    for i = 1 to A.length
+        m = 1
+        for j = 1 to i-1
+            m = m*x
+        y = y + A[i]*m
+    
+    this naive approach has a runtime of θ(n^2). clearly worse than the θ(n) runtime of standard Horner's rule.
+
+c. too many symbols, refer this https://atekihcan.github.io/CLRS/02/P02-03/
+
+d. Trivially true through the loop invariant analysis in part c

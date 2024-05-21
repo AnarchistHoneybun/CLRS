@@ -1,0 +1,11 @@
+a. time complexity of insertion sort is θ(n^2) where n is input size.
+    thus when n = k time taken to sort the data is k*k. now we have n/k such sublists, therefore total time needed is (n/k)*(k*k) = n*k which resolves to θ(nk)
+
+b. merge time for each pair of sublists is θ(n) where n is the
+    combined size. given we have n/k sublists, and we merge them iteratively with two at each level, therefore total levels of merging required is lg(n/k). Thefore, total time to merge the sublists is θ(nlg(n/k))
+
+c. k can be chosen such that k<=lg n 
+
+d. in practice, k can be chosen such that insertion sort gives a
+    better running time than merge sort for the problem at that point.
+    this can be determined with simulations on current environment
