@@ -1,0 +1,13 @@
+1. rtp, max(f(n),g(n)) = θ(f(n) + g(n))
+    since asymptotically non negative,
+    f(n) + g(n) >= max(f(n), g(n))
+
+    also, f(n)<= max(f(n), g(n)) and g(n)<=max(f(n), g(n))
+
+    f(n)+g(n)<=2 max(f(n), g(n))
+    1/2(f(n)+g(n))<=max(f(n), g(n))
+    
+    combining these inequalities,
+    0<=1/2(f(n)+g(n))<=max(f(n),g(n))<=(f(n)+g(n)) for n>=n0
+
+    thus max(f(n),g(n)) = θ(f(n)+g(n)) because there exists c1=0.5 and c2=1
